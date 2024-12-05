@@ -3,6 +3,8 @@
 extern "C" {
     #include "freertos/FreeRTOS.h"
     #include "freertos/task.h"
+    // #include "FreeRTOS.h"
+    // #include "task.h"
     // #include "esp_system.h"
 
     #include "esp_wifi.h"
@@ -10,7 +12,9 @@ extern "C" {
 
     #include "nvs_flash.h"
     #include "esp_log.h"
-}
+};
+
+#include <Drivers/wifi/wifi.h>
 
 class HelloWorld {
 public:
@@ -52,6 +56,9 @@ extern "C" void wifi_event_handler(void* arg, esp_event_base_t event_base, int32
 extern "C" void app_main() {
     HelloWorld hello;
     hello.say_hello();
+
+    wifi ins_wifi;
+    ins_wifi.init();
 
     // esp_event_loop_create_default();
     ESP_ERROR_CHECK(nvs_flash_init());
