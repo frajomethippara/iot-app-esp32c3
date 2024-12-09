@@ -4,3 +4,6 @@ cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(iot-app-esp32c3)
+
+# Tell ESP-IDF to scan the Drivers folder for components
+set(EXTRA_COMPONENT_DIRS "${CMAKE_SOURCE_DIR}/Drivers")
