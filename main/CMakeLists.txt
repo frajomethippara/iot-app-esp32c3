@@ -1,2 +1,2 @@
-idf_component_register(SRCS "iot-app-esp32c3.cpp"
+idf_component_register(SRCS "iot-app-esp32c3.cpp" "wifi.cpp"
                     INCLUDE_DIRS ".")

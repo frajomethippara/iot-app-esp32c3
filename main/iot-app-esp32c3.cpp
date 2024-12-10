@@ -50,9 +50,13 @@ extern "C" void wifi_event_handler(void* arg, esp_event_base_t event_base, int32
     }
 }
 
+#include "wifi.h"
+
 extern "C" void app_main() {
     HelloWorld hello;
     hello.say_hello();
+
+    wifi::getInstance()->print();
 
     // esp_event_loop_create_default();
     ESP_ERROR_CHECK(nvs_flash_init());
