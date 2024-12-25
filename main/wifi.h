@@ -1,3 +1,5 @@
+#include <cstring>
+
 class wifi{
     private:
         wifi();
@@ -6,5 +8,7 @@ class wifi{
         static wifi* getInstance();
 
         bool init();
+        bool connect(char *, char *);
+        bool disconnect();
         void print();
 };
