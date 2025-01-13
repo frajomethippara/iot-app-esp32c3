@@ -1,12 +1,7 @@
 #include <iostream>
 
-extern "C" {
-    #include "esp_wifi.h"
-    
-
-    #include "nvs_flash.h"
-    #include "esp_log.h"
-}
+#include "esp_wifi.h"
+#include "esp_log.h"
 
 #include "wifi.h"
 
@@ -56,7 +51,6 @@ bool wifi::connect(char *wifi_ssid, char *wifi_pass)
 
 void* wifi::getWifiHandlerAddress()
 {
-    printf("Wifi Handler Address in class:%p\n", (void*)(&wifi::wifiEventHandler));
     return (void*)(&wifi::wifiEventHandler);
 }
 
